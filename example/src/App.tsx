@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, StyleSheet, View } from 'react-native';
-import { Sprite } from 'react-native-spritesheet';
+import { Sprite } from '@kaizer433/react-native-spritesheet';
 import SpritSheetJSON from '../assets/spritesheet/sprite/spritesheet.json';
 interface SpriteRef {
   setCurrentFrameIndex: (frameIndex: number) => void;

@@ -1,5 +1,5 @@
 {
-  "name": "react-native-spritesheet",
+  "name": "@kaizer433/react-native-spritesheet",
   "version": "0.1.0",
   "description": "React Native SpriteSheet",
   "main": "lib/commonjs/index",

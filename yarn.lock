@@ -2889,6 +2889,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kaizer433/react-native-spritesheet@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@kaizer433/react-native-spritesheet@workspace:."
+  dependencies:
+    "@commitlint/config-conventional": ^17.0.2
+    "@evilmartians/lefthook": ^1.5.0
+    "@react-native/eslint-config": ^0.72.2
+    "@release-it/conventional-changelog": ^5.0.0
+    "@types/jest": ^28.1.2
+    "@types/react": ~17.0.21
+    "@types/react-native": 0.70.0
+    commitlint: ^17.0.2
+    del-cli: ^5.0.0
+    eslint: ^8.4.1
+    eslint-config-prettier: ^8.5.0
+    eslint-plugin-prettier: ^4.0.0
+    expo-image: ^1.5.1
+    jest: ^28.1.1
+    prettier: ^2.0.5
+    react: 18.2.0
+    react-native: 0.72.6
+    react-native-builder-bob: ^0.20.0
+    react-native-reanimated: ~3.3.0
+    release-it: ^15.0.0
+    typescript: ^5.0.2
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  languageName: unknown
+  linkType: soft
+
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.4
   resolution: "@leichtgewicht/ip-codec@npm:2.0.4"
@@ -14718,37 +14749,6 @@ __metadata:
     react-dom: 18.2.0
     react-native: 0.72.6
     react-native-web: ~0.19.6
-  languageName: unknown
-  linkType: soft
-
-"react-native-spritesheet@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "react-native-spritesheet@workspace:."
-  dependencies:
-    "@commitlint/config-conventional": ^17.0.2
-    "@evilmartians/lefthook": ^1.5.0
-    "@react-native/eslint-config": ^0.72.2
-    "@release-it/conventional-changelog": ^5.0.0
-    "@types/jest": ^28.1.2
-    "@types/react": ~17.0.21
-    "@types/react-native": 0.70.0
-    commitlint: ^17.0.2
-    del-cli: ^5.0.0
-    eslint: ^8.4.1
-    eslint-config-prettier: ^8.5.0
-    eslint-plugin-prettier: ^4.0.0
-    expo-image: ^1.5.1
-    jest: ^28.1.1
-    prettier: ^2.0.5
-    react: 18.2.0
-    react-native: 0.72.6
-    react-native-builder-bob: ^0.20.0
-    react-native-reanimated: ~3.3.0
-    release-it: ^15.0.0
-    typescript: ^5.0.2
-  peerDependencies:
-    react: "*"
-    react-native: "*"
   languageName: unknown
   linkType: soft
 

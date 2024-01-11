@@ -9,13 +9,13 @@ This library provides a `Sprite` component for React Native applications, utiliz
 To use the Sprite component in your project, you'll need to have React Native set up. You can then install the library via npm:
 
 ```bash
-npm install react-native-spritesheet
+npm install @kaizer433/react-native-spritesheet
 ```
 
 Or via yarn:
 
 ```bash
-yarn add react-native-spritesheet
+yarn add @kaizer433/react-native-spritesheet
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ yarn add react-native-spritesheet
 Import the `Sprite` component from the library and use it in your React Native app:
 
 ```javascript
-import { Sprite } from 'react-native-spritesheet';
+import { Sprite } from '@kaizer433/react-native-spritesheet';
 
 // Your component
 function MyComponent() {
@@ -64,7 +64,7 @@ Here is a basic example of how to use the `Sprite` component:
 ```javascript
 import React, { useRef } from 'react';
 import { View, Button } from 'react-native';
-import { Sprite } from 'react-native-spritesheet';
+import { Sprite } from '@kaizer433/react-native-spritesheet';
 import SpritSheetJSON from './path-to-your-spritesheet.json';
 
 export default function App() {
