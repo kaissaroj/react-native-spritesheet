@@ -21,8 +21,8 @@ interface Frame {
 interface SpriteProps {
   spriteSheetWidth: number;
   spriteSheetHeight: number;
-  frameWidth: number;
-  frameHeight: number;
+  width: number;
+  height: number;
   frames: Frame[];
   source: ImageSourcePropType;
 }
@@ -32,14 +32,8 @@ interface SpriteRef {
 }
 
 const Sprite = forwardRef<SpriteRef, SpriteProps>((props, ref) => {
-  const {
-    spriteSheetWidth,
-    spriteSheetHeight,
-    frameWidth,
-    frameHeight,
-    frames,
-    source,
-  } = props;
+  const { spriteSheetWidth, spriteSheetHeight, width, height, frames, source } =
+    props;
   const currentFrameIndex = useSharedValue(0);
 
   useImperativeHandle(
@@ -60,8 +54,8 @@ const Sprite = forwardRef<SpriteRef, SpriteProps>((props, ref) => {
     const selectedFrame = frames[currentFrameIndex.value]?.frame;
     if (!selectedFrame) return { width: 0, height: 0, opacity: 0 };
 
-    const scaleX = frameWidth / selectedFrame.w;
-    const scaleY = frameHeight / selectedFrame.h;
+    const scaleX = width / selectedFrame.w;
+    const scaleY = height / selectedFrame.h;
 
     return {
       width: spriteSheetWidth * scaleX,
@@ -71,11 +65,11 @@ const Sprite = forwardRef<SpriteRef, SpriteProps>((props, ref) => {
         { translateY: -selectedFrame.y * scaleY },
       ],
     };
-  }, [frameWidth, frameHeight, spriteSheetWidth, spriteSheetHeight]);
+  }, [width, height, spriteSheetWidth, spriteSheetHeight]);
 
   const containerStyle = StyleSheet.compose(styles.container, {
-    width: frameWidth,
-    height: frameHeight,
+    width,
+    height,
   });
 
   return (
