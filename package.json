@@ -159,5 +159,9 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "expo-image": "^1.5.1",
+    "react-native-reanimated": "~3.3.0"
   }
 }
