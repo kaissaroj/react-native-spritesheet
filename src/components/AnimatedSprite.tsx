@@ -82,7 +82,7 @@ const AnimatedSprite = forwardRef<AnimatedSprite, AnimatedSpriteProps>(
             duration: 1000 / customFrameRate,
             easing: Easing.linear,
           })
-        );
+        ) as unknown as Parameters<typeof withSequence>;
 
         const numberOfReps = loop ? -1 : 1;
         frameIndex.value = withRepeat(
