@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, StyleSheet, View } from 'react-native';
 import { Sprite, AnimatedSprite } from '@kaizer433/react-native-spritesheet';
-import SpritSheetJSON from '../assets/spritesheet/sprite/spritesheet.json';
+import SpritSheetJSON from '../assets/spritesheet/ninja/spritesheet.json';
 interface SpriteRef {
   setCurrentFrameIndex: (frameIndex: number) => void;
 }
@@ -29,41 +29,45 @@ export default function App() {
         <View style={styles.screenContainer}>
           <AnimatedSprite
             ref={animatedRef}
-            source={require('../assets/spritesheet/sprite/spritesheet.png')}
-            spriteSheetWidth={4420}
-            spriteSheetHeight={130}
-            width={250}
-            height={250}
+            source={require('../assets/spritesheet/ninja/spritesheet.png')}
+            spriteSheetWidth={14670}
+            spriteSheetHeight={601}
+            width={524 * 0.5}
+            height={565 * 0.5}
             frames={SpritSheetJSON?.frames ?? []}
-            defaultAnimationName="IDLE"
+            defaultAnimationName="ATTACK"
             animations={{
-              IDLE: [10, 11, 12, 13, 14, 15, 16],
-              ATTACK: [0, 1, 2, 3, 4, 5, 6],
-              JUMP: [17, 18, 19, 20, 21, 22, 23, 24, 25],
-              RUN: [27, 28, 29, 30, 31, 32, 33, 34],
-              DIE: [7, 8, 9],
+              ATTACK: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+              CLIMB: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+              DEAD: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
             }}
-            inLoop={true}
+            inLoop={false}
             autoPlay={true}
           />
           <View style={styles.btnContainer}>
             <Button
-              onPress={() => animatedRef.current?.startAnimation('IDLE', true)}
-              title="IDLE"
-            />
-            <Button
-              onPress={() => animatedRef.current?.startAnimation('ATTACK')}
+              onPress={() =>
+                animatedRef.current?.startAnimation('ATTACK', false)
+              }
+              color={'white'}
               title="ATTACK"
             />
             <Button
-              onPress={() => animatedRef.current?.startAnimation('JUMP')}
-              title="JUMP"
+              onPress={() => animatedRef.current?.startAnimation('CLIMB')}
+              title="CLIMB"
+              color={'white'}
+            />
+            <Button
+              onPress={() => animatedRef.current?.startAnimation('DEAD')}
+              title="DEAD"
+              color={'white'}
             />
             <Button
               onPress={() =>
                 animatedRef.current?.startAnimation('RUN', true, 15)
               }
               title="RUN"
+              color={'white'}
             />
           </View>
         </View>
@@ -111,6 +115,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'gray',
   },
   btnContainer: {
     marginTop: 50,

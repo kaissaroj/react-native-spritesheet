@@ -74,8 +74,13 @@ const AnimatedSprite = forwardRef<AnimatedSprite, AnimatedSpriteProps>(
           return;
         }
         currentAnimationName.value = animationName;
-        const selectedFramesIndices =
-          animations[currentAnimationName.value] ?? [];
+        const selectedFramesIndices = animations[animationName] ?? [];
+        console.log(
+          'selectedFramesIndices',
+          selectedFramesIndices,
+          animationName,
+          currentAnimationName.value
+        );
 
         const animationsSequence = selectedFramesIndices.map((_, index) =>
           withTiming(index, {
@@ -129,16 +134,21 @@ const AnimatedSprite = forwardRef<AnimatedSprite, AnimatedSpriteProps>(
       if (!frame) {
         return {};
       }
+
       // Calculate the scale factors
       const scaleX = width / frame.w;
       const scaleY = height / frame.h;
 
+      const positionX = frame.x * scaleX;
+      const positionY = frame.y * scaleY;
+
       return {
-        width: spriteSheetWidth * scaleX,
-        height: spriteSheetHeight * scaleY,
+        width: spriteSheetWidth * scaleX, // The scaled sprite sheet width
+        height: spriteSheetHeight * scaleY, // The scaled sprite sheet height
         transform: [
-          { translateX: -frame.x * scaleX },
-          { translateY: -frame.y * scaleY },
+          // Translate to the position of the frame
+          { translateX: -positionX },
+          { translateY: -positionY },
         ],
       };
     });
@@ -155,7 +165,7 @@ const AnimatedSprite = forwardRef<AnimatedSprite, AnimatedSpriteProps>(
         <AnimatedImage
           source={source}
           style={animatedStyle}
-          contentFit="contain"
+          contentFit="cover"
         />
       </View>
     );

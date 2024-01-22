@@ -6,12 +6,12 @@ This library provides `Sprite` and `AnimatedSprite` components for React Native 
 
 <div style="display: flex; justify-content: space-around; align-items: center;">
   <figure>
-    <img src='https://im5.ezgif.com/tmp/ezgif-5-cf4fc6f8fe.gif' width='225' alt='Sprite Animation'>
+    <img src='https://i.imgur.com/7LKbiQ2.gif' width='225' alt='Sprite Animation'>
     <figcaption>Animated Sprite Example</figcaption>
   </figure>
   
   <figure>
-    <img src='https://im.ezgif.com/tmp/ezgif-1-17ebe888dc.gif' width='225' alt='Animated Sprite'>
+    <img src='https://i.imgur.com/kmste9n.gif' width='225' alt='Animated Sprite'>
     <figcaption>Sprite Example</figcaption>
   </figure>
 </div>
