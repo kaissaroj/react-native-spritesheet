@@ -75,13 +75,6 @@ const AnimatedSprite = forwardRef<AnimatedSprite, AnimatedSpriteProps>(
         }
         currentAnimationName.value = animationName;
         const selectedFramesIndices = animations[animationName] ?? [];
-        console.log(
-          'selectedFramesIndices',
-          selectedFramesIndices,
-          animationName,
-          currentAnimationName.value
-        );
-
         const animationsSequence = selectedFramesIndices.map((_, index) =>
           withTiming(index, {
             duration: 1000 / customFrameRate,
@@ -154,6 +147,7 @@ const AnimatedSprite = forwardRef<AnimatedSprite, AnimatedSpriteProps>(
     });
     return (
       <View
+        key={`animation-block-${width}-${height}`}
         style={[
           {
             width,
